@@ -3,9 +3,23 @@
 @tailwind utilities;
 
 @layer base {
-    :root {
-        --clr-primary: 225 225 225;
-        --clr-secondary: 208 214 249;
-        --clr-tertiary: 11 13 23;
-    }
+  :root {
+    --clr-primary: 225 225 225;
+    --clr-secondary: 208 214 249;
+    --clr-tertiary: 11 13 23;
+  }
+  p {
+    @apply text-secondary;
+  }
+  img {
+    @apply max-w-full max-h-full;
+  }
+}
+@layer components {
+  .container {
+    @apply w-[85%] m-auto;
+  }
+  .active {
+    @apply border-b-4 border-primary;
+  }
 }

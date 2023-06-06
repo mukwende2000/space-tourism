@@ -6,36 +6,36 @@ import Technology from './routes/Technology'
 import Crew from './routes/Crew'
 
 const router = createBrowserRouter([
-    {
-        element: <Root />,
+  {
+    element: <Root />,
+    path: '/',
+    children: [
+      {
+        element: <Home />,
         path: '/',
-        children: [
-            {
-                element: <Home />,
-                path: '/',
-            },
-            {
-                element: <Destination />,
-                path: 'destination',
-            },
-            {
-                element: <Crew />,
-                path: 'crew',
-            },
-            {
-                element: <Technology />,
-                path: 'technology',
-            },
-        ],
-    },
+      },
+      {
+        element: <Destination />,
+        path: 'destination',
+      },
+      {
+        element: <Crew />,
+        path: 'crew',
+      },
+      {
+        element: <Technology />,
+        path: 'technology',
+      },
+    ],
+  },
 ])
 
 function App() {
-    return (
-        <div>
-            <RouterProvider router={router} />
-        </div>
-    )
+  return (
+    <div className="font-barlow">
+      <RouterProvider router={router} />
+    </div>
+  )
 }
 
 export default App
