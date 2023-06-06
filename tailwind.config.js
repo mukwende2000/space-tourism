@@ -22,9 +22,9 @@ export default {
         14: '14px',
       },
       backgroundImage: {
-        home_m: "url('./src/assets/home/background-home-mobile.jpg')",
-        home_t: "url('./src/assets/home/background-home-tablet.jpg')",
-        home_d: "url('./src/assets/home/background-home-desktop.jpg')",
+        home_m: "url('./public/assets/home/background-home-mobile.jpg')",
+        home_t: "url('./public/assets/home/background-home-tablet.jpg')",
+        home_d: "url('./public/assets/home/background-home-desktop.jpg')",
       },
     },
   },
