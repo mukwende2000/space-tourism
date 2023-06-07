@@ -30,9 +30,9 @@ function Root() {
   const backgroundImage =
     pathname === '/'
       ? homeBackground
-      : 'destination'
+      : pathname === 'destination'
       ? destinationBackground
-      : 'technology'
+      : pathname === 'technology'
       ? techBackground
       : crewBackground
 

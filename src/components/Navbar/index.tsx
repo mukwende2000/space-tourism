@@ -41,10 +41,30 @@ function index({ menuIsOpen, setMenuIsOpen }: Props) {
             />
           </button>
         </li>
-        <LinkItem path="/" name="Home" number="00" />
-        <LinkItem path="destination" name="Destination" number="01" />
-        <LinkItem path="crew" name="Crew" number="02" />
-        <LinkItem path="technology" name="Technology" number="03" />
+        <LinkItem
+          onClick={() => setMenuIsOpen(false)}
+          path="/"
+          name="Home"
+          number="00"
+        />
+        <LinkItem
+          onClick={() => setMenuIsOpen(false)}
+          path="destination"
+          name="Destination"
+          number="01"
+        />
+        <LinkItem
+          onClick={() => setMenuIsOpen(false)}
+          path="crew"
+          name="Crew"
+          number="02"
+        />
+        <LinkItem
+          onClick={() => setMenuIsOpen(false)}
+          path="technology"
+          name="Technology"
+          number="03"
+        />
       </ul>
     </nav>
   )

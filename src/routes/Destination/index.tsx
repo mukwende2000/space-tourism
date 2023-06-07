@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react'
+import PageHeading from '../../components/PageHeading'
 
 interface DestinationProps {
   name: string
@@ -18,19 +19,19 @@ function Destination() {
     async function getData() {
       const data = await fetch('/data.json')
       const res = await data.json()
-      if (!ignore) {
-        setDestinations(res.destinations)
-        setDestination(destinations[1])
-      }
+      setDestinations(res.destinations)
     }
 
-    let ignore = false
     getData()
 
-    return () => {
-      ignore = true
-    }
+    return () => {}
   }, [])
+
+  useEffect(() => {
+    if (destinations.length > 0) {
+      setDestination(destinations[0])
+    }
+  }, [destinations])
 
   const links = ['moon', 'mars', 'europa', 'titan']
   function handleClick(index: number): void {
@@ -46,12 +47,9 @@ function Destination() {
     <main>
       <div className="grid gap-10 lg:grid-cols-2 container">
         <div>
-          <p className="text-28 md:text-32 my-10 tracking-widest uppercase">
-            <span className="text-primary/30">01</span>
-            <span className="text-primary"> pick your destination</span>
-          </p>
+          <PageHeading number="01" title="pick your destination" />
           <div className="w-[70%] m-auto grid place-items-center md:w-full">
-            <img src={destination?.images?.png} alt="Moon" />
+            <img src={destination?.images?.png} alt={destination?.name} />
           </div>
         </div>
         <div className="flex flex-col items-center text-center lg:text-left lg:items-start">
@@ -75,7 +73,7 @@ function Destination() {
           <h2 className="font-bellefair text-100 uppercase text-primary">
             {destination?.name}
           </h2>
-          <p className="w-[70%] text-[1.4rem] border-b border-gray-400 pb-10">
+          <p className="md:w-[70%] text-[1.4rem] border-b border-gray-400 pb-10">
             {destination?.description}
           </p>
           <div className="my-8 md:flex gap-20">
