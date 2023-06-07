@@ -1,6 +1,8 @@
+import { Link } from 'react-router-dom'
+
 function index() {
   return (
-    <main className={`bg-center py-5 md:py-28 md:mt-40 min-h-screen`}>
+    <main className={`bg-center py-5 md:py-28 md:mt-10 min-h-screen`}>
       <div className="container text-center lg:text-left grid gap-20 lg:grid-cols-2">
         <section className="max-w-[500px] m-auto">
           <p
@@ -13,7 +15,7 @@ function index() {
           >
             space
           </h1>
-          <p className="text-2xl">
+          <p className="text-[21px]">
             Let's face it; if you want to go to space, you might as well
             genuinely go to outer space and not hover kind of on the edge of it.
             Well sit back, and relax because we'll give you a truly out of this
@@ -21,9 +23,9 @@ function index() {
           </p>
         </section>
         <button
-          className={`m-auto text-28 font-bellefair bg-primary text-tertiary uppercase rounded-full grid place-content-center w-5/12 max-w-[374px] min-w-[150px] aspect-square`}
+          className={`m-auto text-28 font-bellefair bg-primary text-tertiary uppercase rounded-full grid place-content-center w-5/12 max-w-[374px] min-w-[150px] aspect-square hover:outline outline-[30px] outline-black/50 duration-300`}
         >
-          explore
+          <Link to="destination">explore</Link>
         </button>
       </div>
     </main>

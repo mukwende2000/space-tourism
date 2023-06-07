@@ -1,9 +1,14 @@
+import { Dispatch, SetStateAction } from 'react'
 import Navbar from '../Navbar'
 
-function index() {
+type Props = {
+  menuIsOpen: boolean
+  setMenuIsOpen: Dispatch<SetStateAction<boolean>>
+}
+function index({ menuIsOpen, setMenuIsOpen }: Props) {
   return (
-    <header className="md:sticky top-0">
-      <Navbar />
+    <header>
+      <Navbar setMenuIsOpen={setMenuIsOpen} menuIsOpen={menuIsOpen} />
     </header>
   )
 }

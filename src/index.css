@@ -22,4 +22,7 @@
   .active {
     @apply border-b-4 border-primary;
   }
+  .distance {
+    @apply uppercase text-28 text-primary font-bellefair;
+  }
 }
