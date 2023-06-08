@@ -1,18 +1,11 @@
 import { useEffect, useState } from 'react'
 import PageHeading from '../../components/PageHeading'
 import useFetchData from '../../hooks/useFetchData'
+import { Destination } from '../../hooks/useFetchData'
 
-interface DestinationProps {
-  name: string
-  description: string
-  distance: string
-  travel: string
-  images: { png: string; webp: string }
-}
-
-function Destination() {
-  const [destination, setDestination] = useState<DestinationProps>()
-  const [activeLink, setActiveLink] = useState(0)
+function index() {
+  const [destination, setDestination] = useState<Destination>()
+  const [activeLink, setActiveLink] = useState<number>(0)
   const data = useFetchData()
 
   const destinations = data?.destinations
@@ -24,6 +17,7 @@ function Destination() {
   }, [destinations])
 
   const links = ['moon', 'mars', 'europa', 'titan']
+
   function handleClick(index: number): void {
     setDestination(destinations && destinations[index])
     links.map((link, i) => {
@@ -82,4 +76,4 @@ function Destination() {
   )
 }
 
-export default Destination
+export default index

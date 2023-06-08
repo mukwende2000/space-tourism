@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react'
 
-interface Destination {
+export interface Destination {
   name: string
   description: string
   distance: string
@@ -8,16 +8,16 @@ interface Destination {
   images: { png: string; webp: string }
 }
 
-interface CrewMember {
+export interface CrewMember {
   name: string
   images: { png: string; webp: string }
   role: string
   bio: string
 }
 
-interface Tech {
+export interface Tech {
   name: string
-  images: { potrait: string; landscape: string }
+  images: { portrait: string; landscape: string }
   description: string
 }
 
