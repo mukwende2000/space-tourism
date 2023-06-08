@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react'
 import PageHeading from '../../components/PageHeading'
+import useFetchData from '../../hooks/useFetchData'
 
 interface DestinationProps {
   name: string
@@ -10,32 +11,21 @@ interface DestinationProps {
 }
 
 function Destination() {
-  const [destinations, setDestinations] = useState<DestinationProps[]>([])
-  const [destination, setDestination] = useState<DestinationProps>(
-    destinations[1]
-  )
+  const [destination, setDestination] = useState<DestinationProps>()
   const [activeLink, setActiveLink] = useState(0)
-  useEffect(() => {
-    async function getData() {
-      const data = await fetch('/data.json')
-      const res = await data.json()
-      setDestinations(res.destinations)
-    }
+  const data = useFetchData()
 
-    getData()
-
-    return () => {}
-  }, [])
+  const destinations = data?.destinations
 
   useEffect(() => {
-    if (destinations.length > 0) {
-      setDestination(destinations[0])
+    if (destinations!?.length > 0) {
+      setDestination(destinations && destinations[0])
     }
   }, [destinations])
 
   const links = ['moon', 'mars', 'europa', 'titan']
   function handleClick(index: number): void {
-    setDestination(destinations[index])
+    setDestination(destinations && destinations[index])
     links.map((link, i) => {
       if (i === index) {
         setActiveLink(i)
