@@ -43,7 +43,7 @@ function index() {
                   onClick={() => {
                     handleClick(index)
                   }}
-                  className={`cursor-pointer text-primary text-[20px] ${
+                  className={`cursor-pointer text-primary text-16 md:text-16 ${
                     activeLink === index ? 'border-b-4 border-primary' : null
                   }`}
                   key={index}
@@ -53,20 +53,20 @@ function index() {
               )
             })}
           </ul>
-          <h2 className="font-bellefair text-100 uppercase text-primary">
+          <h2 className="font-bellefair text-56 md:text-[5rem] uppercase text-primary">
             {destination?.name}
           </h2>
-          <p className="md:w-[70%] text-[1.4rem] border-b border-gray-400 pb-10">
+          <p className="md:w-[70%] text-[1.13rem] border-b border-gray-400 pb-10">
             {destination?.description}
           </p>
           <div className="my-8 md:flex gap-20">
             <div>
-              <p className="uppercase">agv. distance</p>
-              <p className="distance">{destination?.distance}</p>
+              <p className="uppercase text-[.88rem]">agv. distance</p>
+              <p className="distance lg:text-28">{destination?.distance}</p>
             </div>
             <div>
-              <p className="uppercase">est. travel time</p>
-              <p className="distance">{destination?.travel}</p>
+              <p className="uppercase text-[.88rem]">est. travel time</p>
+              <p className="distance lg:text-28">{destination?.travel}</p>
             </div>
           </div>
         </div>
