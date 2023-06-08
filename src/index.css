@@ -19,10 +19,12 @@
   .container {
     @apply w-[85%] m-auto;
   }
-  .active {
-    @apply border-b-4 border-primary;
-  }
+
   .distance {
     @apply uppercase text-28 text-primary font-bellefair;
   }
+}
+
+.active {
+  @apply border-b-4 border-primary;
 }

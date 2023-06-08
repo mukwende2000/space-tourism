@@ -35,6 +35,7 @@ function index() {
             {tabButtons.map((btn) => {
               return (
                 <li
+                  key={btn}
                   onClick={() => handleClick(btn)}
                   className={`${
                     activeLink === btn
