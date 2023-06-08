@@ -3,7 +3,7 @@ import mark from '../../assets/crew/image-mark-shuttleworth.png'
 
 function Crew() {
   return (
-    <main className="min-h-screen">
+    <main className="lg:overflow-hidden lg:h-screen">
       <div className="container">
         <PageHeading number="02" title="meet your crew" />
         <div className="flex flex-col-reverse md:flex-col lg:grid grid-cols-2">
@@ -28,7 +28,7 @@ function Crew() {
               <div className="w-[10px] h-[10px] bg-white rounded-full"></div>
             </div>
           </div>
-          <div className="w-[153px] md:w-[368px] lg:w-[443px] lg:-mt-28 lg:mr-80 m-auto border-b border-gray-500">
+          <div className="w-[153px] md:w-[368px] lg:w-[443px] lg:-mt-28 m-auto lg:m-0 border-b border-gray-500">
             <img src={mark} alt="Mark shuttleworth" className="w-full" />
           </div>
         </div>
