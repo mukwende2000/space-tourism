@@ -1,24 +1,12 @@
 import { useEffect, useState } from 'react'
 import PageHeading from '../../components/PageHeading'
-import useFetchData from '../../hooks/useFetchData'
-<<<<<<< HEAD
-import { Destination } from '../../hooks/useFetchData'
-=======
->>>>>>> refs/remotes/origin/main
+import useFetchData, { Destination } from '../../hooks/useFetchData'
 
 function index() {
   const [destination, setDestination] = useState<Destination>()
-  const [activeLink, setActiveLink] = useState<number>(0)
-  const data = useFetchData()
-
-<<<<<<< HEAD
-=======
-function Destination() {
-  const [destination, setDestination] = useState<DestinationProps>()
   const [activeLink, setActiveLink] = useState(0)
   const data = useFetchData()
 
->>>>>>> refs/remotes/origin/main
   const destinations = data?.destinations
 
   useEffect(() => {
